@@ -8,15 +8,14 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
+      
         <div className={styles.container}>
           <div className={styles.main}>
              <Card/>
           </div>
           </div>
       
-      </body>
-      </>
+          </>
 
      
 
