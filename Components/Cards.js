@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { experiments } from "../content/experiments";
-import { styles } from "../styles/Cards.module.css";
+import  styles  from "../styles/Cards.module.css"
 
   
  
@@ -28,11 +28,11 @@ import { styles } from "../styles/Cards.module.css";
   
   
   
-  function App() {
+ export default function Card() {
     const [state, dispatch] = React.useReducer(experimentsReducer, initialState);
   
     return (
-      <div className={styles.experiments}>
+      <div className={styles.slides}>
         <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
   
         {[...experiments,...experiments,...experiments].map((slide, i) => {
@@ -98,7 +98,7 @@ function Slide({ slide, offset }) {
   return (
     <div
       ref={ref}
-      className="slide"
+      className={styles.slide}
       data-active={active}
       style={{
         "--offset": offset,
@@ -112,7 +112,7 @@ function Slide({ slide, offset }) {
         }}
       />
       <div
-        className="slideContent"
+        className={styles.slideContent}
         style={{
           backgroundImage: `url('${slide.image}')`
         }}
@@ -127,4 +127,3 @@ function Slide({ slide, offset }) {
   );
 }
 
-export default App;
