@@ -1,11 +1,8 @@
 import React from 'react';
-import "./assets/css/App.css";
 
+import { experiments } from "../content/experiments";
+import { styles } from "../styles/Cards.module.css";
 
-
-  const slides = [
-    
-  ];
   
  
   
@@ -13,18 +10,18 @@ import "./assets/css/App.css";
     slideIndex: 0
   };
   
-  const slidesReducer = (state, event) => {
+  const experimentsReducer = (state, event) => {
     if (event.type === "PREV") {
       return {
         ...state,
-        slideIndex: (state.slideIndex + 1) % slides.length
+        slideIndex: (state.slideIndex + 1) % experiments.length
       };
     }
     if (event.type === "NEXT") {
       return {
         ...state,
         slideIndex:
-          state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1
+          state.slideIndex === 0 ? experiments.length - 1 : state.slideIndex - 1
       };
     }
   };
@@ -32,14 +29,14 @@ import "./assets/css/App.css";
   
   
   function App() {
-    const [state, dispatch] = React.useReducer(slidesReducer, initialState);
+    const [state, dispatch] = React.useReducer(experimentsReducer, initialState);
   
     return (
-      <div className="slides">
+      <div className={styles.experiments}>
         <button onClick={() => dispatch({ type: "PREV" })}>‹</button>
   
-        {[...slides,...slides,...slides].map((slide, i) => {
-          let offset = slides.length + (state.slideIndex - i);
+        {[...experiments,...experiments,...experiments].map((slide, i) => {
+          let offset = experiments.length + (state.slideIndex - i);
           return <Slide slide={slide} offset={offset} key={i} />;
         })}
         <button onClick={() => dispatch({ type: "NEXT" })}>›</button>
@@ -109,7 +106,7 @@ function Slide({ slide, offset }) {
       }}
     >
       <div
-        className="slideBackground"
+        className={styles.slideBackground}
         style={{
           backgroundImage: `url('${slide.image}')`
         }}
@@ -120,10 +117,10 @@ function Slide({ slide, offset }) {
           backgroundImage: `url('${slide.image}')`
         }}
       >
-        <div className="slideContentInner">
-          <h2 className="slideTitle">{slide.title}</h2>
-          <h3 className="slideSubtitle">{slide.subtitle}</h3>
-          <p className="slideDescription">{slide.description}</p>
+        <div className={styles.slideContentInner}>
+          <h2 className={styles.slideTitle}>{slide.title}</h2>
+          <h3 className={styles.experimentsubtitle}>{slide.subtitle}</h3>
+          <p className={styles.slideDescription}>{slide.description}</p>
         </div>
       </div>
     </div>
