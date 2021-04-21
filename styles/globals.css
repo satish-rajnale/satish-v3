@@ -17,28 +17,20 @@ a {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  position: relative;
+
 }
 
 html,
 body {
-  height: 100%;
-  width: 100%;
 
-  padding: 10vh;
+overflow-x: hidden;
+
   font-size: 3vmin;
 }
 
 html {
   background: #151515;
   color: #fff;
-  overflow: hidden;
+ 
 }
 
-body {
-  display: flex;
- 
-  justify-content: center;
- 
-}
