@@ -5,11 +5,12 @@ import Button from "../Components/Button";
 export default function Home() {
   return (
     <>
+    
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body>
+     
         <div className={styles.btn_container}>
           <Button />
         </div>
@@ -18,7 +19,7 @@ export default function Home() {
             <Card />
           </div>
         </div>
-      </body>
+ 
     </>
   );
 }

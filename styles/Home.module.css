@@ -10,13 +10,13 @@
 .main {
   padding: 5rem 0;
   flex: 1;
-  height:20px;
-  margin-bottom:2em;
+
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border:2px solid red; 
+ 
 }
 .btn_container{
 
@@ -27,7 +27,7 @@
   
   width:100%;
  
-  border:2px solid red; 
+ 
 }
 .footer {
   width: 100%;
